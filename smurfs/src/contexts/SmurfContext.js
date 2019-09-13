@@ -1,9 +1,9 @@
 import { createContext } from 'react';
 
-const smurfData = {
+const smurf = {
     name: "", 
     age: 0,
     height: ""
   }
 
-export const SmurfContext = createContext(smurfData);
+export const SmurfContext = createContext(smurf);
