@@ -5,24 +5,29 @@ import { addSmurf } from '../actions/index';
 const SmurfForm = (props) => {
     console.log(props);
 
-    const [state, setState] = useState("");
+    const [state, setState] = useState({name: "", age: "", height: ""});
 
     const smurfHandler = (e) => {
         e.preventDefault();
         props.addSmurf(state);
         console.log(state);
+        setState({
+            state: ""
+        })
     }
 
     const inputHandler = (e) => {
-        console.log(e.target.value);
-        setState(e.target.value);
+        // console.log(e.target.value);
+        setState({...state, 
+            [e.target.name]: e.target.value       
+        })
     }
 
     return (
         <div>
-            <form onSubmit={(e) => {smurfHandler(e)}}>
+            <form onSubmit={smurfHandler}>
                 <input type="text" name="name" onChange={inputHandler} />
-                <input type="number" name="age" onChange={inputHandler} />
+                <input type="text" name="age" onChange={inputHandler} />
                 <input type="text" name="height" onChange={inputHandler} />
                 <button type="submit">Add Smurf!</button>
             </form>
@@ -33,7 +38,7 @@ const SmurfForm = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-
+        smurfs: state.smurfs
     }
 }
 
