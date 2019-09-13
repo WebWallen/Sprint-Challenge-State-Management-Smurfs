@@ -10,6 +10,7 @@ function App() {
       axios.get('http://localhost:3333/smurfs')
       // .then(res => console.log(res))
       .then(res => setSmurfs(res.data))
+      .catch(err => console.log(err))
   }, [smurfs])
 
   return (
@@ -21,9 +22,9 @@ function App() {
           <p>Height: {smurf.height}</p>
         </>
         )}
+        <Smurf />
     </div>
   );
-  
 }
 
 export default App;
