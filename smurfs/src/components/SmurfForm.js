@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addSmurf } from '../actions/index';
+import { addSmurf } from '../actions/index'; // Pulled in this action because it gets attached to mSTP below.
 
 const SmurfForm = (props) => {
-    console.log("Props from SmurfForm", props);
+    console.log("Props from SmurfForm", props); // Always console the props to confirm they are correct
 
-    const [state, setState] = useState({name: "", age: "", height: ""});
+    const [state, setState] = useState({name: "", age: "", height: ""}); // Matches source smurf data structure
 
-    const smurfHandler = (e) => {
+    const smurfHandler = (e) => { // If it's an event, you've gotta pass in an (e) arg. 
         e.preventDefault();
         props.addSmurf(state);
-        console.log(state);
+        console.log("State from smurfHandler", state);
     }
 
     const inputHandler = (e) => {
         // console.log(e.target.value);
-        setState({...state, 
-            [e.target.name]: e.target.value       
+        setState({...state, // Spread in initial state
+            [e.target.name]: e.target.value // Targets name/value pairs on initial state.
         })
     }
 
@@ -36,8 +36,8 @@ const SmurfForm = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        smurf: state.smurf
+        smurf: state.smurf // "Smurf" because that is what we named the new form submission on axios.POST in actions
     }
 }
 
-export default connect(mapStateToProps, {addSmurf})(SmurfForm);
+export default connect(mapStateToProps, {addSmurf})(SmurfForm); // Pulled in addSmurf because that's where the post function lives. 
