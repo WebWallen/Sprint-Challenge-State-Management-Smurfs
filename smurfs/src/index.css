@@ -1,5 +1,32 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  background-image: url(https://www.bongfish.com/wp-content/uploads/2017/04/SV_header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.input {
+  display: block;
+  margin: 20px auto;
+  width: 35vw;
+  text-align: center;
+}
+
+button {
+  background: skyblue;
+  color: white;
+  transition: 0.6s;
+}
+
+button:hover {
+  cursor: pointer;
+  color: skyblue;
+  background: white;
+}
+
+h2 {
+  margin-top: 60px;
+  color: white;
+  text-align: center;
 }

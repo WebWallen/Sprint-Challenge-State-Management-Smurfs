@@ -11,9 +11,6 @@ const SmurfForm = (props) => {
         e.preventDefault();
         props.addSmurf(state);
         console.log(state);
-        setState({
-            state: ""
-        })
     }
 
     const inputHandler = (e) => {
@@ -25,11 +22,12 @@ const SmurfForm = (props) => {
 
     return (
         <div>
+            <h2>Smurf Village Sign-Up Form</h2>
             <form onSubmit={smurfHandler}>
-                <input type="text" name="name" onChange={inputHandler} />
-                <input type="text" name="age" onChange={inputHandler} />
-                <input type="text" name="height" onChange={inputHandler} />
-                <button type="submit">Add Smurf!</button>
+                <input type="text" name="name" placeholder="What's your name?" onChange={inputHandler} className="input" />
+                <input type="text" name="age" placeholder="How old are you (we promise not to tell)?" onChange={inputHandler} className="input"/>
+                <input type="text" name="height" placeholder="What's your size in CM (size limit = 100!)?" onChange={inputHandler} className="input"/>
+                <button type="submit" className="input">Add Smurf!</button>
             </form>
         </div>
     )
@@ -38,7 +36,7 @@ const SmurfForm = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        smurfs: state.smurfs
+        smurf: state.smurf
     }
 }
 
