@@ -1,16 +1,31 @@
-import React, { Component } from "react";
-import "./App.css";
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
-      </div>
-    );
+import React, { useState, useEffect } from 'react';
+import '../index.css';
+import { connect } from 'react-redux';
+import Smurf from './Smurf';
+import SmurfForm from './SmurfForm';
+import { getSmurfs } from '../actions/index';
+
+const App = ({ smurfs, getSmurfs }) => {
+
+  const [state, setState] = useState({name: "", age: "", height: ""});
+  console.log('Smurfs from app', smurfs);
+
+  useEffect(() => {
+    setState(smurfs)
+  }, [getSmurfs] )
+
+  return (
+    <div className="App">
+      <SmurfForm />
+      <Smurf />
+    </div>  
+  )
+}
+
+const mapStateToProps = state => {
+  return {
+    smurfs: state.smurfs
   }
 }
 
-export default App;
+export default connect(mapStateToProps, { getSmurfs })(App);
