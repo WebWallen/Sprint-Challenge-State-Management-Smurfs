@@ -7,18 +7,20 @@ import { getSmurfs } from '../actions/index';
 
 const App = ({ smurfs, getSmurfs }) => {
 
-  const [state, setState] = useState({name: "", age: "", height: ""});
-  console.log('Smurfs from app', smurfs);
+  const [state, setState] = useState({ name: "", age: "", height: "" });
+  // console.log('Smurfs from app', smurfs);
+
+
 
   useEffect(() => {
     setState(smurfs)
-  }, [getSmurfs] )
+  }, [getSmurfs])
 
   return (
     <div className="App">
       <SmurfForm />
       <Smurf />
-    </div>  
+    </div>
   )
 }
 
