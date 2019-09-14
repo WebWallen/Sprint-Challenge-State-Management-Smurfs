@@ -14,7 +14,7 @@ const initialState = { // Second: set up the initial state like so (this = good 
 }
 
 export const smurfReducer = (state = initialState, action) => { // Third: set reducer equal to intial state
-    console.log('reducer', action); // Fourth: Set up a console specifying orgin for debugging purposes
+    console.log('reducer', action); // Fourth: Set up a console specifying origin for debugging purposes
     switch (action.type) { // Fifth: Create a switch statement with action.type as an argument
         case GET_SMURFS_START:
             return {

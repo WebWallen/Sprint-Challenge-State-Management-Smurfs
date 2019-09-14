@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import '../index.css';
 import { connect } from 'react-redux';
 import Smurf from './Smurf';
 import SmurfForm from './SmurfForm';
 import { getSmurfs } from '../actions/index';
 
-const App = ({ smurfs, getSmurfs }) => { // notice the ({ syntax }) matches what's coming from getSmurfs in actions/dispatch
-
-  const [state, setState] = useState({name: "", age: "", height: ""}); // don't forget you can combine state/effect with new concepts
-  console.log('Smurfs from app', smurfs);
+const App = ({ getSmurfs }) => { // notice the ({ syntax }) matches what's coming from getSmurfs in actions/dispatch
 
   useEffect(() => {
-    setState(smurfs)
-  }, [getSmurfs] ) // only run the effect when there is a new call to getSmurfs function
+    getSmurfs();
+  }, [] ) // run the effect when there is a new call to the getSmurfs action, leave dependency array empty so it runs once
 
   return (
     <div className="App">

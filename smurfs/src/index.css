@@ -30,13 +30,15 @@ h2 {
   margin-top: 60px;
   color: white;
   text-align: center;
+  font-family: Noto Sans, sans-serif;
 }
 
 .smurf {
   background: transparent;
   width: 30vw;
-  margin: 0 auto;
+  margin: 20px auto;
   background: skyblue;
+  border: 1px solid black;
 }
 
 .smurf h2, p {
