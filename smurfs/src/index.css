@@ -4,6 +4,7 @@ body {
   background-image: url(https://www.bongfish.com/wp-content/uploads/2017/04/SV_header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
 }
 
 .input {
@@ -29,4 +30,17 @@ h2 {
   margin-top: 60px;
   color: white;
   text-align: center;
+}
+
+.smurf {
+  background: transparent;
+  width: 30vw;
+  margin: 0 auto;
+  background: skyblue;
+}
+
+.smurf h2, p {
+  color: white;
+  text-align: center;
+  margin: 20px;
 }

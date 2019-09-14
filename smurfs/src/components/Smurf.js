@@ -10,7 +10,7 @@ const Smurf = props => {
             <div className="smurf" key={smurf.id}>
                <h2>Name: {smurf.name}</h2>  
                <p>Age: {smurf.age}</p>
-               <p>Height: {smurf.height}</p>
+               <p>Height: {smurf.height} CM</p>
             </div>
             )}
         </div>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addSmurf } from '../actions/index';
 
 const SmurfForm = (props) => {
-    console.log(props);
+    console.log("Props from SmurfForm", props);
 
     const [state, setState] = useState({name: "", age: "", height: ""});
 
